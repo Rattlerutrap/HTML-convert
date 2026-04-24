@@ -11,7 +11,7 @@ function convertMarkdown()
     html = html.replace(/^### (.*$)/gim, '<h3>$1</h3>')
 
     html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    html = html.replace(/__(.*?)__/, '<strong>$1</strong>')
+    html = html.replace(/__(.*?)__/g, '<strong>$1</strong>')
 
     html = html.replace(/\*(.*?)\*/g, '<em>$1</em>')
     html = html.replace(/_(.*?)_/g, '<em>$1</em>')
@@ -26,6 +26,7 @@ function convertMarkdown()
 
     preview.innerHTML = html
 
+    return html
 }
 
 input?.addEventListener("input", () => convertMarkdown())
